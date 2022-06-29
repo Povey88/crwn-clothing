@@ -1,9 +1,9 @@
 
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route } from "react-router-dom";
 
-import Navigation from './routes/navigation/navigation.component';
-import Home from './routes/home/home.component.jsx';
-import SignIn from './routes/sign-in/sign-in.component';
+import Navigation from "./routes/navigation/navigation.component";
+import Home from "./routes/home/home.component.jsx";
+import SignIn from "./routes/sign-in/sign-in.component";
 
 
 const Shop = () => {
