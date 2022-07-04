@@ -3,11 +3,7 @@ import { Routes, Route } from "react-router-dom";
 
 import Navigation from "./routes/navigation/navigation.component";
 import Home from "./routes/home/home.component.jsx";
-<<<<<<< HEAD
 import Authentication from './routes/authentication/authentication.component'
-=======
-import SignIn from './routes/sign-in/sign-in.component'
->>>>>>> 6169970b58ebbce33cc51c51bba2e16095ecff84
 
 
 const Shop = () => {
