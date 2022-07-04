@@ -16,7 +16,11 @@ const Navigation = () => {
           <Link className='nav-link' to='/shop'>
             SHOP
           </Link>
+<<<<<<< HEAD
           <Link className='nav-link' to='/auth'>
+=======
+          <Link className='nav-link' to='/sign-in  '>
+>>>>>>> 6169970b58ebbce33cc51c51bba2e16095ecff84
             SIGN IN
           </Link>
         </div>
