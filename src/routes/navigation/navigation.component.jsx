@@ -1,16 +1,15 @@
 
 import { Outlet, Link} from 'react-router-dom';
-import { Fragment } from 'react';
-import { Box, Flex, Image, Spacer } from "@chakra-ui/react"
+import { Fragment, useContext } from 'react';
+import { Box, Flex, Image } from "@chakra-ui/react"
 import CrwnLogo from '../../assets/crown.svg'
-
-// import { signOutUser } from '../../utils/firebase/firebase.utils';
-// import { UserContext } from '../../contexts/user.context';
+import { signOutUser } from '../../utils/firebase/firebase.utils';
+import { UserContext } from '../../contexts/user.context';
 
 // import './navigation.styles.scss';
 
 const Navigation = () => {
-  // const { currentUser } = useContext(UserContext);
+  const { currentUser } = useContext(UserContext);
   
   return (
 
@@ -26,16 +25,21 @@ const Navigation = () => {
               <Box p={2}>
                 <Link cursor='pointer' to='/shop' color='BlackAlpha.300' variant='solid' >SHOP </Link>
               </Box>
+
+                {currentUser ? (
+                  <Box cursor='pointer' fontSize='sm' p={2} color='BlackAlpha.300' variant='solid' onClick={signOutUser}>
+                    SIGN OUT 
+                  </Box>
+                ) : (
               <Box p={2}>
                 <Link cursor='pointer' to='/auth' color='BlackAlpha.300' variant='solid'>SIGN IN</Link>
               </Box>
+              )}
           </Flex>
     </Flex>
 
         <Outlet />
    </Fragment>
-
-   
 
   );
 };
