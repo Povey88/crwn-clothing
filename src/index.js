@@ -1,4 +1,5 @@
 import React from 'react';
+import { ChakraProvider } from '@chakra-ui/react'
 import { render } from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 
@@ -14,8 +15,10 @@ render(
   <React.StrictMode>
     <BrowserRouter>
       <UserProvider>
-        <App />
-      </UserProvider> 
+      <ChakraProvider >
+         <App />
+      </ChakraProvider>
+     </UserProvider> 
     </BrowserRouter>
   </React.StrictMode>,
   rootElement
