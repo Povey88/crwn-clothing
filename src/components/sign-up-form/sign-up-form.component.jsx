@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { Box, Text } from '@chakra-ui/react'
+import { customTheme } from '../../theme';
 
 import FormInput from '../form-input/form-input.component';
 import Button from '../button/button.component';
@@ -57,9 +59,9 @@ const SignUpForm = () => {
   };
 
   return (
-    <div className='sign-up-container'>
-      <h2>Don't have an account?</h2>
-      <span>Sign up with your email and password</span>
+    <Box>
+      <Text fontSize={['sm', 'md', 'lg', 'xl']}>Don't have an account?</Text>
+      <Text fontSize={['sm', 'md', 'lg', 'xl']}>Sign up with your email and password</Text>
       <form onSubmit={handleSubmit}>
         <FormInput
           label='Display Name'
@@ -98,7 +100,7 @@ const SignUpForm = () => {
         />
         <Button type='submit'>Sign Up</Button>
       </form>
-    </div>
+    </Box>
   );
 };
 

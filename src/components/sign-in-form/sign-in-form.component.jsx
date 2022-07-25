@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { Box, Text, Grid } from '@chakra-ui/react'
+import { customTheme } from '../../theme'
 
 import FormInput from '../form-input/form-input.component';
 import Button from '../button/button.component';
@@ -46,9 +48,9 @@ const SignInForm = () => {
   };
 
   return (
-    <div className='sign-in-container'>
-      <h2>Already have an account?</h2>
-      <span>Sign in with your email and password</span>
+    <Box m={{base: 2}} mb={8}>      
+      <Text fontSize={['sm', 'md', 'lg']}>Already have an account?</Text>
+      <Text fontSize={['sm', 'md', 'lg']}>Sign in with your email and password</Text>
       <form onSubmit={handleSubmit}>
         <FormInput
           label='Email'
@@ -67,14 +69,14 @@ const SignInForm = () => {
           name='password'
           value={password}
         />
-        <div className='buttons-container'>
+        <Box>
           <Button type='submit'>Sign In</Button>
           <Button buttonType='google' type='button' onClick={signInWithGoogle}>
             Sign In With Google
           </Button>
-        </div>
+        </Box>
       </form>
-    </div>
+    </Box>
   );
 };
 
