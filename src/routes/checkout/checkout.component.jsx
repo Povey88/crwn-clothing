@@ -1,37 +1,42 @@
 import { React } from 'react';
 import { Box, Text } from '@chakra-ui/react';
 import { useContext } from 'react';
+import CheckoutItem from '../../components/checkout-item/checkout-item.component';
 
 import { CartContext } from '../../contexts/cart.context'
 
+import './checkout.styles.scss';
+
 const Checkout = () => {
-    const { cartItems, addItemToCart } = useContext(CartContext);
+    const { cartItems, addItemToCart, removeCartItem, removeItemToCart, cartTotal } = useContext(CartContext);
 
     return (
-      <Box>
-          <Text>
-             Checkout Page
-          </Text>
-          <br />
-          <Box>
-          {cartItems.map((cartItem) => {
-                const { id, name, quantity } = cartItem;
-
-                return (
-                <Box key={id}>
-                    <Text>{name}</Text>
-                    <Text>{quantity}</Text>
-                    <br />
-                    <Text onClick={() => addItemToCart(cartItem)}>Increase</Text>
-                    <Text>Decrease</Text>
-                    <br />
-                </Box>
-                );
-            })}
+      <Box className='checkout-container'>
+          <Box className='checkout-header'>
+              <Box className='header-block'>
+                <span>Product</span>
+              </Box>
+              <Box className='header-block'>
+                <span>Description</span>
+              </Box>
+              <Box className='header-block'>
+                <span>Quantity</span>
+              </Box>
+              <Box className='header-block'>
+                <span>Price</span>
+              </Box>
+              <Box className='header-block'>
+                <span>Remove</span>
+              </Box>
           </Box>
+
+          {cartItems.map((cartItem) => (
+                  <CheckoutItem key={cartItem.id} cartItem={cartItem} /> 
+          ))}
+            <span className='total'>Total: £{cartTotal}</span>
       </Box>
     )
   }
   
-  export default Checkout
+  export default Checkout;
   
