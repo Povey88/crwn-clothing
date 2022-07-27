@@ -23,7 +23,7 @@ const CheckoutItem = ( { cartItem  }) => {
             <span className='name'>{name}</span>
             <span className='quantity'>
             <ChevronLeftIcon className='arrow' mt={2} h='30px' cursor='pointer' onClick={removeItemHandler}/>
-                <span className='value' mt={2} >{quantity}</span>
+                <span className='value'  >{quantity}</span>
             <ChevronRightIcon className='arrow' mt={2} h='30px' cursor='pointer' onClick={addItemHandler}/>
             </span>
             <span className='price'>{price}</span>
